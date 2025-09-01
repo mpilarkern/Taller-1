@@ -6,8 +6,17 @@ def convertibilidad(x, y):
     else:
         return False
 
-print(convertibilidad(2, 45))
-print(convertibilidad(1, 82))
+#algunos casos de prueba
+print(convertibilidad(1, 82)) #True
+print(convertibilidad(1, 2)) #True
+print(convertibilidad(1, 11)) #True
+print(convertibilidad(2, 162)) #True
+print(convertibilidad(5, 101)) #True
+print(convertibilidad(2, 21)) #True
+print(convertibilidad(2, 22)) #False
+print(convertibilidad(2, 45)) #False
+print(convertibilidad(3, 10)) #False
+print(convertibilidad(2, 3)) #False
 
 """Dudas:
 1. x e y son siempre números enteros?
