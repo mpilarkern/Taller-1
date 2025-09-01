@@ -12,4 +12,5 @@ print(convertibilidad(1, 82))
 """Dudas:
 1. x e y son siempre números enteros?
 2. la secuencia de transformaciones se imprime como array o como números separados?
+3. cuando lo paso a c++ de qué tipo tiene que ser la salida? (o sea debería ser int convertibilidad(x, y)?)
 """
