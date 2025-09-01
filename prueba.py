@@ -8,3 +8,8 @@ def convertibilidad(x, y):
 
 print(convertibilidad(2, 45))
 print(convertibilidad(1, 82))
+
+"""Dudas:
+1. x e y son siempre números enteros?
+2. la secuencia de transformaciones se imprime como array o como números separados?
+"""
