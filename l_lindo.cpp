@@ -30,12 +30,14 @@ int l_lindo(string str, char l = 'a', int izq = 0, int der = -1){
 
 
 int main(){
-    cout << l_lindo("z") << endl;
-    cout << l_lindo("bbaaceaa") << endl;
-    cout << l_lindo("jkghasdf") << endl;
-    cout << l_lindo("x") << endl;
-    cout << l_lindo("da") << endl;
-    cout << l_lindo("ccddaabb") << endl;
+    cout << l_lindo("aaaadcbb") << endl; //0
+    cout << l_lindo("bbaaceaa") << endl; //4
+    cout << l_lindo("jkghasdf") << endl; //7
+    cout << l_lindo("x") << endl; //1
+    cout << l_lindo("da") << endl; //1
+    cout << l_lindo("ccddaabb") << endl; //5
+    cout << l_lindo("z") << endl; //1
+    cout << l_lindo("zz") << endl; //2
 
     return 0;
 }
