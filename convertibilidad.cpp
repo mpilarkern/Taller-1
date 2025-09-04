@@ -1,13 +1,19 @@
 #include<iostream>
+#include<stack>
 
 using namespace std;
 
-bool convertibilidad(int x, int y){
+bool convertibilidad(int x, int y, stack<int>& transformaciones){
+    transformaciones.push(x);
+
     if (x == y) {
         return true;
-    } else if (2*x <= y or 10*x + 1 <= y) {
-        return convertibilidad(2*x, y) or convertibilidad(10*x + 1, y);
+    } else if (2*x <= y && convertibilidad(2*x, y, transformaciones)) {
+        return true;
+    } else if (10*x + 1 <= y && convertibilidad(10*x + 1, y, transformaciones)) {
+        return true;
     } else {
+        transformaciones.pop();
         return false;
     }
 }
