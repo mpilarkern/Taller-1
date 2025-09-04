@@ -3,12 +3,12 @@
 
 using namespace std;
 
-int l_lindo(string str, char l = 'a', int izq = 0, int der = -1){
+int l_lindo(const string& str, char l = 'a', int izq = 0, int der = -1){
     if (der == -1){
         der = str.size() - 1;
     }
 
-    if (izq == der){ //caso base: un solo elemento
+    if (izq == der){
         if (str[izq] == l) return 0;
         else return 1;
     }
@@ -17,12 +17,16 @@ int l_lindo(string str, char l = 'a', int izq = 0, int der = -1){
     
     int cambios_izq = 0;
     for (int i = izq; i <= medio; i++){
-        if (str[i] != l) cambios_izq ++;
+        if (str[i] != l) {
+            cambios_izq ++;
+        }
     }
     
     int cambios_der = 0;
     for (int j = medio + 1; j <= der; j++){
-        if (str[j] != l) cambios_der ++;
+        if (str[j] != l) {
+            cambios_der ++;
+        }
     }
 
     return min(cambios_izq + l_lindo(str, l + 1, medio + 1, der), cambios_der + l_lindo(str, l + 1, izq, medio));
@@ -30,14 +34,18 @@ int l_lindo(string str, char l = 'a', int izq = 0, int der = -1){
 
 
 int main(){
-    cout << l_lindo("aaaadcbb") << endl; //0
-    cout << l_lindo("bbaaceaa") << endl; //4
-    cout << l_lindo("jkghasdf") << endl; //7
-    cout << l_lindo("x") << endl; //1
-    cout << l_lindo("da") << endl; //1
-    cout << l_lindo("ccddaabb") << endl; //5
-    cout << l_lindo("z") << endl; //1
-    cout << l_lindo("zz") << endl; //2
+    int total_casos;
+    cin >> total_casos;
+    
+    while (total_casos != 0){
+        int longitud;
+        string str;
+
+        cin >> longitud >> str;
+        cout << l_lindo(str) << "\n";
+
+        total_casos--;
+    }
 
     return 0;
 }
